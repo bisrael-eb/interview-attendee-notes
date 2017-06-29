@@ -1,0 +1,10 @@
+# Misc
+.DS_Store
+
+# Project-related
+*.pyc
+*.pyo
+
+*.db
+
+__pycache__/
