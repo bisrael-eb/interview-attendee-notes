@@ -10,6 +10,7 @@ class Attendee(models.Model):
 
     def to_dict(self):
         return dict(
+            id=self.pk,
             first_name=self.first_name,
             last_name=self.last_name
         )
