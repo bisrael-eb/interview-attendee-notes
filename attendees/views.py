@@ -11,6 +11,11 @@ def get_attendees(request):
     return JsonResponse({'attendees': attendees}, status=200) 
 
 
+def get_attendee(request, attendee_id):
+    attendee = Attendee.objects.get_or_404(id=attendee_id)
+    return JsonResponse(attendee.to_dict(), status=200)
+
+
 def add_attendee(request):
     if request.method != 'POST':
         return HttpResponse('Method Not Allowed', status=405)
