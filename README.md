@@ -1,15 +1,31 @@
 Attendee Notes
 ==============
 
-This project keeps track of event attendees. However, just like real
-attendees, our attendees sometimes misbehave. The people running our
-events would like to keep track of these misbehaviors and tell each
-other about them. To do this, we're going to add the ability to create
-notes about attendees.
+This project keeps track of event attendees. However, just like our real
+attendees, they sometimes misbehave. The people running our events would
+like to keep track of these misbehaviors and tell each other about them.
+To do this, we're going to add the ability to create notes about
+attendees.
 
 The models and CRUD endpoints for Attendees already exist, but the
-models and CRUD endpoints for these new notes do not. The task here is
-to create the model(s), endpoints, and views to add notes to attendees.
+models and CRUD endpoints for these attendee notes do not. The task here
+is to create the model(s), endpoints, and views to add notes to
+attendees.
+
+Here's a quick rundown of our requirements:
+
+1. Must have the ability to create notes, and associate those with an
+   attendee.
+2. Must have the ability to retrieve all notes.
+3. Must have the ability to retrieve all notes for a given attendee.
+4. Must NOT be able to delete or edit a specific note.
+
+
+If there's time, we should also implement the following:
+
+1. Add notes to the serialization of an attendee, but make it optional
+2. Update our API to optionally include notes when retrieving attendees
+
 
 Here are a few assumptions we can make about this task:
 
@@ -53,6 +69,19 @@ Installation
 7. Confirm that everything is working
 
         $> curl http://localhost:8000/attendees/
+
+8. Create a few test attendees
+
+        $> curl \
+            -H "Content-Type: application/json" \
+            -X POST \
+            -d '{"first_name": "Doc", "last_name": "McStuffins"}' \
+            http://localhost:8000/attendees
+        $> curl \
+            -H "Content-Type: application/json" \
+            -X POST \
+            -d '{"first_name": "Stuffy", "last_name": "McStuffins"}' \
+            http://localhost:8000/attendees
 
 8. Create a new git branch (use your name as the branch name), and let's get started!
 
