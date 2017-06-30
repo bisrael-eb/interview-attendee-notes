@@ -68,7 +68,7 @@ Installation
 
 7. Confirm that everything is working
 
-        $> curl http://localhost:8000/attendees/
+        $> curl http://localhost:8000/attendees
 
 8. Create a few test attendees
 
