@@ -1,10 +1,13 @@
 import json
 
-from django.shortcuts import render
+from django.shortcuts import redirect
 from django.http import HttpResponse, JsonResponse
 
 from attendees.models import Attendee
 
+
+def index(request):
+    return redirect('attendees-get-or-add', permanent=True)
 
 def get_or_add_attendees(request):
     if request.method == 'POST':

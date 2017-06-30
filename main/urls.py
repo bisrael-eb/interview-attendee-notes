@@ -17,6 +17,7 @@ from django.conf.urls import url
 from attendees import views
 
 urlpatterns = [
+    url(r'^$', views.index, name='home'),
     url(r'^attendees$', views.get_or_add_attendees, name='attendees-get-or-add'),
     url(r'^attendees/(?P<attendee_id>\d+)$', views.update_or_delete_attendee, name='attendees-update'),
 ]
