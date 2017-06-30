@@ -83,5 +83,5 @@ Installation
             -d '{"first_name": "Stuffy", "last_name": "McStuffins"}' \
             http://localhost:8000/attendees
 
-8. Create a new git branch (use your name as the branch name), and let's get started!
+9. Create a new git branch (use your name as the branch name), and let's get started!
 
